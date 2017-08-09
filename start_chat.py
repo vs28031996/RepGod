@@ -1,4 +1,7 @@
 # Start_Chat Function definition
+from add_status import add_status
+
+
 def start_chat(name, age, rating):
     show_menu = True
     while show_menu:
@@ -7,7 +10,10 @@ def start_chat(name, age, rating):
         # validating user input
         if result == 1:
             # action 1
-            pass
+            status_message = None
+            current_status = add_status(status_message)
+            print " %s " % current_status
+            show_menu = False
         elif result == 2:
             show_menu = False
         else:

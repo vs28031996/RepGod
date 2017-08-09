@@ -7,6 +7,10 @@ existing = raw_input(question)
 # validating user's input
 if existing == "Y" or existing == "y":
     start_chat(spy_name, spy_age, spy_rating)
+    print "Let's get Started!"
+    spy_is_online = True
+    print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy_name, spy_age, spy_rating)
+
 
 elif existing == "N" or existing == "n":
     spy_name = raw_input("Provide your name here :")
@@ -31,9 +35,11 @@ elif existing == "N" or existing == "n":
                     print " You can always do better"
                 else:
                     print " We can always use somebody to help in the office"
-                print " Alright " + spy_name + " i'd like to know more about you"
                 print " Welcome " + spy_name + " Glad to have u back"
-
+                print "Let's get Started!"
+                spy_is_online = True
+                print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy_name, spy_age, spy_rating)
+                start_chat(spy_name, spy_age, spy_rating)
             else:
                 print " You are not eligible to a spy"
         else:
@@ -47,8 +53,4 @@ elif existing == "N" or existing == "n":
 else:
     print " Wrong choice.Try again"
 
-print "Let's get Started!"
 
-spy_is_online = True
-
-print " Authentication Complete . Welcome : %s Age : %d and rating of : %f " % (spy_name, spy_age, spy_rating)
