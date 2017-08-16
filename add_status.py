@@ -1,5 +1,7 @@
-def add_status(status_message):
-    status = ['My name is Bond, James Bond', '007.']
+status = ['My name is Bond, James Bond', ' I C Python']
+
+
+def add_status(status_message, status1):
     if status_message is None:
         print " You don't have any status \n"
     else:
@@ -15,12 +17,12 @@ def add_status(status_message):
 
     elif default == "y" or default == "Y":
         item_position = 1
-        for message in status:
+        for message in status1:
             print " %d. %s " % (item_position, message)
             item_position += 1
         message_selection = int(raw_input(" \nChoose from the above messages : "))
         if len(status) >= message_selection:
-            updated_status_message = status[message_selection - 1]
+            updated_status_message = status1[message_selection - 1]
 
     return updated_status_message
 

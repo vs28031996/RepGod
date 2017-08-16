@@ -1,45 +1,44 @@
-from spy_details import spy_name, spy_age, spy_salutation, spy_rating
+from spy_details import spy
 from start_chat import start_chat
 
-question = "Continue as %s %s (Y/N)" % (spy_salutation, spy_name)
+question = "Continue as %s %s (Y/N)" % (spy['salutation'], spy['name'])
 existing = raw_input(question)
 
 # validating user's input
 if existing == "Y" or existing == "y":
-    start_chat(spy_name, spy_age, spy_rating)
+    start_chat(spy['name'], spy['age'], spy['rating'])
     print "Let's get Started!"
-    spy_is_online = True
-    print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy_name, spy_age, spy_rating)
+    print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy['name'], spy['age'], spy['rating'])
 
 
 elif existing == "N" or existing == "n":
-    spy_name = raw_input("Provide your name here :")
+    spy['name'] = raw_input("Provide your name here :")
 
-    if len(spy_name) > 0:
-        spy_salutation = raw_input("What should we call you? : ")
-        spy_name = spy_salutation + " " + spy_name
-        spy_age = 0
-        spy_rating = 0.0
-        spy_is_online = False
-        spy_age = raw_input("What is your age? ")
-        spy_age = int(spy_age)
-        if type(spy_age) is int:
-            if 12 < spy_age < 50:
-                spy_rating = raw_input(" What is your spy rating: ")
-                spy_rating = float(spy_rating)
-                if spy_rating > 4.5:
+    if len(spy['name']) > 0:
+        spy['salutation'] = raw_input("What should we call you? : ")
+        spy['name'] = spy['salutation'] + " " + spy['name']
+        spy['age'] = 0
+        spy['rating'] = 0.0
+        spy['is_online'] = False
+        spy['age'] = raw_input("What is your age? ")
+        spy['age'] = int(spy['age'])
+        if type(spy['age']) is int:
+            if 12 < spy['age'] < 50:
+                spy['rating'] = raw_input(" What is your spy rating: ")
+                spy['rating'] = float(spy['rating'])
+                if spy['rating'] > 4.5:
                     print " Great ace!!"
-                elif 3.5 < spy_rating < 4.5:
+                elif 3.5 < spy['rating'] < 4.5:
                     print " You are Good one "
-                elif 2.5 < spy_rating < 3.5:
+                elif 2.5 < spy['rating'] < 3.5:
                     print " You can always do better"
                 else:
                     print " We can always use somebody to help in the office"
-                print " Welcome " + spy_name + " Glad to have u back"
+                print " Welcome " + spy['name'] + " Glad to have u back"
                 print "Let's get Started!"
-                spy_is_online = True
-                print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy_name, spy_age, spy_rating)
-                start_chat(spy_name, spy_age, spy_rating)
+                spy['is_online'] = True
+                print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy['name'], spy['age'], spy['rating'])
+                start_chat(spy['name'], spy['age'], spy['rating'])
             else:
                 print " You are not eligible to a spy"
         else:
@@ -47,9 +46,6 @@ elif existing == "N" or existing == "n":
 
     else:
         print "Invalid Name Try again"
-
-
-
 else:
     print " Wrong choice.Try again"
 
