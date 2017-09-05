@@ -7,9 +7,6 @@ existing = raw_input(question)
 # validating user's input
 if existing == "Y" or existing == "y":
     start_chat(spy['name'], spy['age'], spy['rating'])
-    print "Let's get Started!"
-    print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy['name'], spy['age'], spy['rating'])
-
 
 elif existing == "N" or existing == "n":
     spy['name'] = raw_input("Provide your name here :")
@@ -36,8 +33,6 @@ elif existing == "N" or existing == "n":
                     print " We can always use somebody to help in the office"
                 print " Welcome " + spy['name'] + " Glad to have u back"
                 print "Let's get Started!"
-                spy['is_online'] = True
-                print " Authentication Complete . Welcome : %s Age : %d and rating of : %.2f " % (spy['name'], spy['age'], spy['rating'])
                 start_chat(spy['name'], spy['age'], spy['rating'])
             else:
                 print " You are not eligible to a spy"
