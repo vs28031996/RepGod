@@ -1,4 +1,4 @@
-status = ['My name is Bond, James Bond', ' I C Python']
+from globals import status
 
 
 def add_status(status_message, status1):

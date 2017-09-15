@@ -1,17 +1,19 @@
 # Start_Chat Function definition
 from add_status import add_status, status
 from add_friends import add_friend
-from spy_details import  spy
 from send_message import send_message
 from read_message import read_message
+from read_chat import read_chat
+from globals import spy
 
 
 def start_chat(name, age, rating):
     current_status = " "
 
     print "Let's get Started!"
+    spy.name = spy.salutation + ' ' + spy.name
     print " Authentication Complete . Welcome : %s Age : %d and " \
-          "rating of : %.2f " % (spy['name'], spy['age'], spy['rating'])
+          "rating of : %.2f " % (spy.name, spy.age, spy.rating)
 
     show_menu = True
     while show_menu:
@@ -39,7 +41,11 @@ def start_chat(name, age, rating):
             read_message()
 
         elif result == 5:
-            
+            read_chat()
+
+        elif result == 6:
+            print "Goodbye my friend."
+            break
 
         else:
             print " Wrong choice .Try again"

@@ -1,9 +1,12 @@
+# Spy class
 
 
-spy = {
-    'name': ' Shubham' ,
-    'salutation': " Mr.",
-    'age': 24,
-    'rating': 2.5,
-    'is_online': True
-}
+class Spy:
+    def __init__(self, name, salutation, age, rating):
+        self.name = name
+        self.salutation = salutation
+        self.age = age
+        self.rating = rating
+        self.is_online = True
+        self.chats = []
+        self.words = ''
