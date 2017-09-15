@@ -2,6 +2,7 @@
 from add_status import add_status, status
 from add_friends import add_friend
 from spy_details import  spy
+from send_message import send_message
 
 
 def start_chat(name, age, rating):
@@ -13,8 +14,8 @@ def start_chat(name, age, rating):
 
     show_menu = True
     while show_menu:
-        menu_choices = " What do you want to do? : \n 1.Add Status  \n 2. Add a friend \n 3. Send a secret message " \
-                       "4. Read a secret message \n 5. Read Chats from user \n 2.Close Application \n "
+        menu_choices = " What do you want to do? : \n 1. Add Status  \n 2. Add a friend \n 3. Send a secret message " \
+                       "\n 4. Read a secret message \n 5. Read Chats from user \n 2. Close Application \n "
         result = int(raw_input(menu_choices))
         # validating user input
         if result == 1:
@@ -27,7 +28,12 @@ def start_chat(name, age, rating):
                 print " %s " % current_status
 
         elif result == 2:
-            show_menu = False
+            friends_added = add_friend()
+            print "You have %d Friend "%(friends_added)
+
+        elif result == 3:
+            send_message()
+
         else:
             print " Wrong choice .Try again"
 

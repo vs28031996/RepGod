@@ -10,7 +10,7 @@ def add_friend():
         'is_online': False,
         'rating': 0,
         }
-    new_friend['name'] = raw_input("Add your friend . Name : ")
+    new_friend['name'] = raw_input("Add your friend : Name : ")
     new_friend['salutation'] = raw_input("Are they Mr. or Mrs. : ")
     new_friend['name'] = new_friend['salutation'] + " " + new_friend['name']
 
@@ -19,6 +19,8 @@ def add_friend():
 
     if len(new_friend['name'])>0 and  new_friend['age']>12 and new_friend['rating']>=spy['rating']:
         friends.append(new_friend)
+        print "Friend Added \n"
+
     else:
         print "Sorry!! invalid entry "
 
